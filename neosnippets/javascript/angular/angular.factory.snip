@@ -1,4 +1,5 @@
 snippet ngfactory
+abbr "inject by ngInject"
 options head
   (function() {
       'use strict';
@@ -18,5 +19,26 @@ options head
   
           function $4() {
           }
+      }
+  })();
+
+
+snippet ngfactory2
+abbr "inject by $inject"
+options head
+  (function() {
+      'use strict';
+  
+      angular
+          .module('${1:module}')
+          .factory('${2:factory}', $2);
+  
+      $2.$inject = [${3:dependencies}];
+      function $2($3) {
+          var service = {
+          };
+          return service;
+  
+          //--------------------------------
       }
   })();

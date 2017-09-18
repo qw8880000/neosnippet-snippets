@@ -1,4 +1,5 @@
 snippet ngcontroller
+abbr "inject by ngInject"
 options head
   (function() {
       'use strict';
@@ -15,6 +16,30 @@ options head
           activate();
   
           ////////////////
+  
+          function activate() {
+          }
+      }
+  })();
+
+snippet ngcontroller2
+abbr "inject by $inject"
+options head
+  (function() {
+      'use strict';
+  
+      angular
+          .module('${1:module}')
+          .controller('${2:Controller}Controller', $2Controller);
+  
+      $2Controller.$inject = [${3:dependencies}];
+      function $2Controller($3) {
+          var vm = this;
+          vm.title = '$2Controller';
+  
+          activate();
+  
+          //--------------------------------
   
           function activate() {
           }
