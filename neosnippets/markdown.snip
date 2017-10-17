@@ -79,3 +79,15 @@ options head
     \`\`\`${1:#:language}
     ${2:#:code }
     \`\`\`
+
+snippet hexo_title
+abbr "hexo title"
+options head
+    ---
+    title: ${1}
+    date: `strftime("%Y-%m-%d %H:%M:%S")`
+    categories:
+    tags:
+    abbrlink: @@abbrlink
+    ---
+
