@@ -1,5 +1,5 @@
 snippet ngservice
-abbr "inject by ngInject"
+abbr default
 options head
   (function() {
       'use strict';
@@ -19,22 +19,23 @@ options head
       }
   })();
 
-snippet ngservice2
-abbr "inject by $inject"
+snippet ngservice-airbnb
+abbr airbnb code style
 options head
-  (function() {
+  (function () {
       'use strict';
   
       angular
           .module('${1:module}')
           .service('${2:Service}', $2);
   
-      $2.$inject = [${3:dependencies}];
-      function $2($3) {
-
-          var vm = this;
+      /* @ngInject */
+      function $2(${3:dependencies}) {
+          this.${4:func} = $4;
   
-          //--------------------------------
+          ////////////////
   
+          function $4() {
+          }
       }
-  })();
+  }());

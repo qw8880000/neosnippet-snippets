@@ -1,5 +1,5 @@
 snippet ngcontroller
-abbr "inject by ngInject"
+abbr default
 options head
   (function() {
       'use strict';
@@ -22,26 +22,27 @@ options head
       }
   })();
 
-snippet ngcontroller2
-abbr "inject by $inject"
+snippet ngcontroller-airbnb
+abbr airbnb code style
 options head
-  (function() {
+  (function () {
       'use strict';
   
       angular
           .module('${1:module}')
           .controller('${2:Controller}Controller', $2Controller);
   
-      $2Controller.$inject = [${3:dependencies}];
-      function $2Controller($3) {
+      /* @ngInject */
+      function $2Controller(${3:dependencies}) {
           var vm = this;
           vm.title = '$2Controller';
   
           activate();
   
-          //--------------------------------
+          ////////////////
   
           function activate() {
           }
       }
-  })();
+  }());
+

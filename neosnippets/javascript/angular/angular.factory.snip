@@ -1,5 +1,5 @@
 snippet ngfactory
-abbr "inject by ngInject"
+abbr default
 options head
   (function() {
       'use strict';
@@ -22,23 +22,27 @@ options head
       }
   })();
 
-
-snippet ngfactory2
-abbr "inject by $inject"
+snippet ngfactory-airbnb
+abbr airbnb code style
 options head
-  (function() {
+  (function () {
       'use strict';
   
       angular
           .module('${1:module}')
           .factory('${2:factory}', $2);
   
-      $2.$inject = [${3:dependencies}];
-      function $2($3) {
+      /* @ngInject */
+      function $2(${3:dependencies}) {
           var service = {
+              ${4:func}: $4
           };
           return service;
   
-          //--------------------------------
+          ////////////////
+  
+          function $4() {
+          }
       }
-  })();
+  }());
+

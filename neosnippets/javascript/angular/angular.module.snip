@@ -1,4 +1,5 @@
 snippet ngmodule
+abbr default
 options head
   (function() {
       'use strict';
@@ -6,3 +7,13 @@ options head
       angular
           .module('${1:module}', []);
   })();
+
+snippet ngmodule-airbnb
+abbr airbnb code style
+options head
+  (function () {
+      'use strict';
+  
+      angular
+          .module('${1:module}', []);
+  }());
