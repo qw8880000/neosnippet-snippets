@@ -1,0 +1,13 @@
+snippet ngcomponent
+abbr default
+options head
+    (function() {
+        'use strict';
+  
+        angular
+            .module('${1:module}')
+            .component('${2:component}', {
+                templateUrl: ${3:templateUrl},
+            });
+    })();
+
