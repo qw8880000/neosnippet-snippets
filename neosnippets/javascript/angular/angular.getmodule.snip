@@ -1,4 +1,4 @@
-snippet ngcomponent
+snippet ngGetModule
 abbr default
 options head
     (function() {
@@ -6,21 +6,16 @@ options head
   
         angular
             .module('${1:module}')
-            .component('${2:component}', {
-                templateUrl: ${3:templateUrl},
-            });
     })();
 
-snippet ngcomponent-airbnb
+snippet ngGetModule-airbnb
 abbr airbnb code style
 options head
     (function () {
+
         'use strict';
   
         angular
             .module('${1:module}')
-            .component('${2:component}', {
-                templateUrl: ${3:templateUrl},
-            });
     }());
 
