@@ -7,8 +7,15 @@ options head
         angular
             .module('${1:module}')
             .component('${2:component}', {
-                templateUrl: ${3:templateUrl},
+                templateUrl: '',
+                controller: $2Controller,
+                controllerAs: 'vm',
             });
+
+        /* @ngInject */
+        function $2Controller() {
+        }
+
     })();
 
 snippet ngcomponent-airbnb
@@ -20,7 +27,14 @@ options head
         angular
             .module('${1:module}')
             .component('${2:component}', {
-                templateUrl: ${3:templateUrl},
+                templateUrl: '',
+                controller: $2Controller,
+                controllerAs: 'vm',
             });
+
+        /* @ngInject */
+        function $2Controller() {
+        }
+
     }());
 
